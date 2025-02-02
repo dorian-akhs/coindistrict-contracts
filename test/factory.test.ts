@@ -294,7 +294,7 @@ describe('TREXFactory', () => {
             suite: { claimIssuerContract },
           } = await loadFixture(deployFullSuiteFixture);
 
-          const countryAllowModule = await ethers.deployContract('CountryAllowModule');
+          const countryAllowModule = await ethers.deployContract('TestModule');
 
           const tx = await trexFactory.connect(deployer).deployTREXSuite(
             'salt',
@@ -308,11 +308,7 @@ describe('TREXFactory', () => {
               irAgents: [aliceWallet.address],
               tokenAgents: [bobWallet.address],
               complianceModules: [countryAllowModule.address],
-              complianceSettings: [
-                new ethers.utils.Interface(['function batchAllowCountries(uint16[] calldata countries)']).encodeFunctionData('batchAllowCountries', [
-                  [42, 66],
-                ]),
-              ],
+              complianceSettings: [new ethers.utils.Interface(['function doSomething(uint)']).encodeFunctionData('doSomething', [42])],
             },
             {
               claimTopics: [ethers.utils.keccak256(ethers.utils.toUtf8Bytes('DEMO_TOPIC'))],
