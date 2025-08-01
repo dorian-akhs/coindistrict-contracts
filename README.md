@@ -1,75 +1,73 @@
-# T-REX : Token for Regulated EXchanges
-
-![GitHub](https://img.shields.io/github/license/ERC-3643/ERC-3643?color=green)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ERC-3643/ERC-3643)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/ERC-3643/ERC-3643/publish-release.yml)
-![GitHub repo size](https://img.shields.io/github/repo-size/ERC-3643/ERC-3643)
-![GitHub Release Date](https://img.shields.io/github/release-date/ERC-3643/ERC-3643)
-
-
-
-
-----
-
-<br><br>
-
-<p align="center">
-  <a href="https://tokeny.com/erc3643-whitepaper/">
-  <img src="./docs/img/T-REX.png" width="150" title="t-rex">
-  </a>
-</p>
-
+# Coin District - Real-World Asset Tokenization Platform
 
 ## Overview
 
-The T-REX (Token for Regulated EXchanges) protocol is a comprehensive suite of Solidity smart contracts,
-implementing the [ERC-3643 standard](https://eips.ethereum.org/EIPS/eip-3643) and designed to enable the issuance, management, and transfer of security
-tokens in
-compliance with regulations. It ensures secure and compliant transactions for all parties involved in the token exchange.
+**Coin District** is a platform for the tokenization of real-world assets. We make it possible to buy, sell, and invest in tokenized real estate, commodities, and other physical assets through blockchain technology.
 
-## Key Components
+This repository contains our smart contract suite built on the [ERC-3643 standard](https://eips.ethereum.org/EIPS/eip-3643) for permissioned tokens, enabling compliant security token issuance and management.
 
-The T-REX protocol consists of several key components:
+## Technology Stack
 
-- **[ONCHAINID](https://github.com/onchain-id/solidity)**: A smart contract deployed by a user to interact with the security token or any other application
-  where an on-chain identity may be relevant. It stores keys and claims related to a specific identity.
+- **Solidity**: Smart contract development
+- **Hardhat**: Development environment and testing framework
+- **OpenZeppelin**: Secure smart contract libraries
+- **ERC-3643**: Permissioned token standard
+- **pnpm**: Package manager
 
-- **Trusted Issuers Registry**: This contract houses the addresses of all trusted claim issuers associated with a specific token.
+## Key Features
 
-- **Claim Topics Registry**: This contract maintains a list of all trusted claim topics related to the security token.
-
-- **Identity Registry**: This contract holds the identity contract addresses of all eligible users authorized to hold the token. It is responsible for claim verification.
-
-- **Compliance Smart Contract**: This contract independently operates to check whether a transfer is in compliance with the established rules for the token.
-
-- **Security Token Contract**: This contract interacts with the Identity Registry to check the eligibility status of investors, enabling token holding and transactions.
+- **Agent-based access control** for secure token management
+- **Global identity registry** for KYC/AML compliance
+- **Modular compliance engine** for regulatory adherence
+- **Upgradeable contracts** via proxy pattern
+- **Permissioned ERC-20 tokens** with transfer restrictions
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/ERC-3643/ERC-3643.git`
-2. Install dependencies: `npm ci`
-3. Compile the contracts: `hardhat compile`
-4. Run tests: `hardhat test`
+### Prerequisites
+
+- Node.js (v16 or higher)
+- pnpm package manager
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-org/coindistrict-contracts.git
+   cd coindistrict-contracts
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Compile the contracts:
+
+   ```bash
+   pnpm hardhat compile
+   ```
+
+4. Run tests:
+   ```bash
+   pnpm hardhat test
+   ```
+
+### Development
+
+- **Compile**: `pnpm hardhat compile`
+- **Test**: `pnpm hardhat test`
+- **Deploy**: `pnpm hardhat deploy`
+- **Verify**: `pnpm hardhat verify`
 
 ## Documentation
 
-For a detailed understanding of the T-REX protocol, please refer to the [whitepaper](./docs/TREX-WhitePaper.pdf).
-All functions of T-REX smart contracts are described in the [T-REX documentation](https://docs.tokeny.com/docs/smart-contracts)
-
-## Contributing
-
-We welcome contributions from the community. Please refer to the [CONTRIBUTING](./CONTRIBUTING.md) guide for more details.
+For detailed specifications and implementation details, see [SPECIFICATIONS.md](./spec/SPECIFICATIONS.md).
 
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](./LICENSE.md).
 
-----
-
-<div style="padding: 16px;">
-   <a href="https://tokeny.com/wp-content/uploads/2023/04/Tokeny_TREX-v4_SC_Audit_Report.pdf" target="_blank">
-       <img src="https://hacken.io/wp-content/uploads/2023/02/ColorWBTypeSmartContractAuditBackFilled.png" alt="Proofed by Hacken - Smart contract audit" style="width: 258px; height: 100px;">
-   </a>
-</div>
-
-----
+---
